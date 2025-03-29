@@ -7,3 +7,19 @@ Pour le fichier .msi, pour activer le mode silencieux, on met /quiet comme argum
 Pour le fichier.exe, pour activer le mode silencieuw, on met /VERYSILENT
 6- Creer le nuget package avec la commande nuget pack videopsalm.nuspec (normalement, il genere un fichier.nupckg)
 7-Pour tester l'installation en local choco install videopsalm --soure: C: \..
+8 - Mettre en ligne le dossier, on se connecte:
+
+git remote add origin https://github.com/Votry/Automatisation-install
+
+Puis on push dans le fichier distant 
+
+git push -u origin master
+
+%Pour pusher le package sur chocolatey.org
+1 creer un compte
+
+puis prendre l'API key depuis le compte, se connecter en Admin
+
+choco apikey -k cd00dc57-1d7b-4fd8-8f0a-40c012d4e53a -source https:/push.chocolatey.org/
+
+choco push <pathto package>.nupkg --source https://push.chocolatey.org/
